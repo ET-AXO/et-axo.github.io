@@ -119,7 +119,7 @@ async function addSearch(){
 function addMarker(item){
     const marker = L.marker([item.lat,item.lon], {icon: treeIcon})
         .addTo(markersLayer)
-        .bindPopup(item.name)
+        .bindPopup(popupHtml(item))
         .openPopup();
 
     markerById.set(item.id, marker);
@@ -131,6 +131,11 @@ function delMarker(id){
         markersLayer.removeLayer(marker);
         markerById.delete(id);
     }
+}
+
+function popupHtml(item){
+    const stars = item.note ? "⭐".repeat(item.note) : "Aucune note";
+    return `<b>${item.query}</b><br/>Note: ${stars}`;
 }
 
 function save(){
@@ -201,7 +206,6 @@ function renderLists(){
             inputRadio.addEventListener("change", () => {
                 if(inputRadio.checked){
                     setNote(item.id, i);
-                    console.log(i)
                 }
             });
 
@@ -211,9 +215,10 @@ function renderLists(){
 
             noteRadios.appendChild(inputRadio)
             noteRadios.appendChild(labelRadio)
-            li.appendChild(noteRadios)
         }
-
+        
+        noteRow.appendChild(noteRadios);
+        li.appendChild(noteRow);
         ul.appendChild(li);
     }
 }
@@ -222,6 +227,12 @@ function setNote(id, rating){
     const item = searchs.find(s => s.id === id)
     if (item){
         item.note = rating
+    }
+
+    // Update popup
+    const marker = markerById.get(id);
+    if (marker){
+        marker.setPopupContent(popupHtml(item));
     }
 
     save();

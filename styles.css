@@ -203,7 +203,7 @@ top: 50px;
 }
 
 .rating input {
-  appearance: unset;
+  appearance: none;
 }
 
 .rating label {
@@ -218,7 +218,7 @@ top: 50px;
   stroke: var(--stroke);
   stroke-linejoin: bevel;
   stroke-dasharray: 12;
-  animation: idle 4s linear infinite;
+  animation: none;
   transition: stroke 0.2s, fill 0.5s;
 }
 
@@ -233,8 +233,8 @@ top: 50px;
 }
 
 .rating input:checked ~ label svg {
-  transition: 0s;
   animation: idle 4s linear infinite, yippee 0.75s backwards;
+  transition: 0s;
   fill: var(--fill);
   stroke: var(--fill);
   stroke-opacity: 0;
