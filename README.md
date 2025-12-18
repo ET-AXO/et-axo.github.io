@@ -22,4 +22,17 @@ Ceci est un site internet qui répertorie les maisons décorées pour Noël sur 
     git push origin [nom-branch]
     ```
 
-Il est recommandé d'installer l'extension "Live server" pour voir les modifications en direct.
+## Extensions
+
+- Live Server (Permet de visualiser en temps réel le rendu du développement).
+
+## Command Git
+
+- Ajout de branche
+```git branch [nom-branche]```
+
+- Changement de branche
+```git checkout [nom-branche]```
+
+- Fusion de branche
+```git merge [nom-branche à fusionner]```
