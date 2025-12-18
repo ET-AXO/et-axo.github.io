@@ -2,7 +2,7 @@
 
 Ceci est un site internet qui répertorie les maisons décorées pour Noël sur une carte.
 
-# Installation
+## Installation
 
 1. **Installer** Visual Studio Code.
 
@@ -26,7 +26,11 @@ Ceci est un site internet qui répertorie les maisons décorées pour Noël sur 
 
 - Live Server (Permet de visualiser en temps réel le rendu du développement).
 
-## Command Git
+## Informations complémentaires
+
+Obligation de compte Stadia maps pour bénéficier de la tuile pour Leaflet (Librairie de carte utilisée) via une clé API.
+
+### Command Git
 
 - Ajout de branche
 ```git branch [nom-branche]```
