@@ -135,7 +135,7 @@ function delMarker(id){
 
 function popupHtml(item){
     const stars = item.note ? "⭐".repeat(item.note) : "Aucune note";
-    return `<b>${item.query}</b><br/>Note: ${stars}`;
+    return `<b>${item.query}</b><br/>${item.name}<br/>Note: ${stars}`;
 }
 
 function save(){
