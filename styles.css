@@ -18,18 +18,17 @@ body {
 
 h1 {
     font-size: 30px;
-    margin-left: 150px;
 }
 
-
-p {
-    margin-left: 95px;
+.hint {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
 }
-
 
 .header{
     margin:12px;
     display:flex;
+    flex-direction: column;
 }
 
 
@@ -37,6 +36,12 @@ p {
     display: grid;
     grid-template-columns: 1fr 320px;
     height: calc(100vh - 80px);
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -72,15 +77,13 @@ li {
 /* styling of whole input container */
 .form {
   --timing: 0.3s;
-  --width-of-input: 200px;
   --height-of-input: 40px;
   --border-height: 2px;
   --input-bg: #919191;
   --border-color: #2f2ee9;
   --border-radius: 30px;
   --after-border-radius: 1px;
-  position: absolute;
-  width: var(--width-of-input);
+  margin: 20px;
   height: var(--height-of-input);
   display: flex;
   align-items: center;
@@ -274,4 +277,12 @@ top: 50px;
     transform: scale(1.2);
     fill: var(--fill);
   }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
 }

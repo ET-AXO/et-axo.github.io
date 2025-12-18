@@ -167,8 +167,6 @@ function renderLists(){
             save();
             renderLists();
         }
-        
-
 
         delBtn.innerHTML = delSvg;
 
