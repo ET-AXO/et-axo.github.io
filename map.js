@@ -1,10 +1,10 @@
 var map = L.map('map').setView([48.6495180, -2.0260409], 17 );
 
-L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}{r}.{ext}', {
+L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}{r}.{ext}?api-key={API_KEY}', {
     maxZoom: 19,
-    ext: 'jpg'
+    ext: 'jpg',
+    API_KEY: "e21c9d4f-0077-45f4-b8ea-61ea862a6699"
 }).addTo(map);
-
 
 const markersLayer = L.layerGroup().addTo(map);
 const STORAGE_KEY = "lieu_recherche";
